@@ -15,10 +15,10 @@ public class User {
     @Column(length = 15, nullable = false)
     private String password;
 
-    @Column(length = 45, nullable = false, name = "first name")
+    @Column(length = 45, nullable = false, name = "first_name")
     private String firstName;
 
-    @Column(length = 45, nullable = false, name = "last name")
+    @Column(length = 45, nullable = false, name = "last_name")
     private String lastName;
 
     public Integer getId() {
@@ -59,6 +59,17 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }
 
