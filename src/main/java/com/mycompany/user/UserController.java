@@ -9,7 +9,8 @@ import java.util.List;
 
 @Controller
 public class UserController {
-    @Autowired private UserService service;
+    @Autowired
+    private UserService service;
 
     @GetMapping("/users")
     public String showUserList(Model model) {
@@ -17,5 +18,11 @@ public class UserController {
         model.addAttribute("listUsers", listUsers);
 
         return "users";
+    }
+
+    @GetMapping("/users/new")
+    public String showNewForm(Model model) {
+        model.addAttribute("user", new User());
+        return "user_form";
     }
 }
